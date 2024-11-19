@@ -15,9 +15,19 @@
     }
 </style>
 <body>
-    <?php
-     $name = "Dark Matter" 
+    <?php 
+    $name = "Dark Matter";
+    $read = false; # check boolean (true or false)
+
+    if ( $read ) {
+        $message = "You have read {$name}";
+    } else {
+        $message = "You have not read book!";
+    }
+
     ?>
-    <h1>You have read <?php echo "'{$name}'" ?></h1>
+
+    <h1><?php echo $message ?></h1>
+    
 </body>
 </html>
