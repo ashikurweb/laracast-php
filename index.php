@@ -11,16 +11,32 @@
 
     <?php
     $books = [
-        'Do Androids Dream of Electric Sheep',
-        'The Langolires',
-        'Hail Marry'
+        [
+            'name'          => 'Making India Awesome',
+            'author'        => 'Chetan Bhagat',
+            'purchaseUrl'   => 'https://bhahat.com'
+        ],
+
+        [
+            'name'          => 'A Million Mutinies Now',
+            'author'        => 'V.S. Naipaul',
+            'purchaseUrl'   => 'https://naipaul.com'
+        ],
+
+        [
+            'name'          => 'An Equal Music',
+            'author'        => 'Vikram Seth',
+            'purchaseUrl'   => 'https://seth.com'
+        ]
     ]; 
     ?>
 
     <ul>
-        <?php foreach ( $books as $book ) : ?>
-            <li><?php echo $book ?></li>
-        <?php endforeach ?>
+        <?php foreach( $books as $book ) : ?> 
+        <a href="<?php echo $book['purchaseUrl'] ?>">
+            <li><?php echo $book['name'] ?> - <?php echo $book['author'] ?></li>
+        </a>
+        <?php endforeach; ?>
     </ul>
 </body>
 </html>
