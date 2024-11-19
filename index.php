@@ -5,29 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laracast Tutotial || Code With By Ashikur Rahman</title>
 </head>
-<style> 
-    body {
-        display: grid;
-        place-items: center;
-        min-height: 100vh;
-        margin: 0;
-        font-family: 'Courier New', Courier, monospace;
-    }
-</style>
+
 <body>
-    <?php 
-    $name = "Dark Matter";
-    $read = false; # check boolean (true or false)
+    <h1>Recommended Books</h1>
 
-    if ( $read ) {
-        $message = "You have read {$name}";
-    } else {
-        $message = "You have not read book!";
-    }
-
+    <?php
+    $books = [
+        'Do Androids Dream of Electric Sheep',
+        'The Langolires',
+        'Hail Marry'
+    ]; 
     ?>
 
-    <h1><?php echo $message ?></h1>
-    
+    <ul>
+        <?php foreach ( $books as $book ) : ?>
+            <li><?php echo $book ?></li>
+        <?php endforeach ?>
+    </ul>
 </body>
 </html>
