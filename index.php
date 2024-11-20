@@ -53,10 +53,12 @@
         return $filterByBooks;
     }
 
+    $filteredBooks = filterByAuthor( $books, 'Chetan Bhagat' );
+
     ?>
 
     <ul>
-       <?php foreach ( filterByAuthor( $books, 'Chetan Bhagat' ) as $book ) : ?>
+       <?php foreach ( $filteredBooks as $book ) : ?>
         <a href="<?php echo $book['purchaseUrl'] ?>">
             <li><?php echo $book['name'] ?> - <?php echo $book['author'] ?>(<?php echo $book['releaseYear'] ?>) </li>
         </a>
