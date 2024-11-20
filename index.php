@@ -40,18 +40,19 @@
         ]
     ]; 
 
-    $filterByAuthor = function ( $books, $author ) {
-        $filterBooks = [];
-
-        foreach ( $books as $book ) {
-            if ( $book['author'] === $author ) {
-                $filterBooks[] = $book;
+    function filter ( $items, $key, $value ) {
+        $filteredItems = [];
+        
+        foreach ( $items as $item ) {
+            if ( $item[$key] === $value ) {
+                $filteredItems[] = $item;
             }
         }
-        return $filterBooks;
-    };
 
-    $filteredBooks = $filterByAuthor( $books, 'Chetan Bhagat');
+        return $filteredItems;
+    }
+
+    $filteredBooks = filter( $books, 'releaseYear', 1568);
 
     ?>
 
