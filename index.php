@@ -52,7 +52,7 @@
         return $filteredItems;
     }
 
-    $filteredBooks = filter( $books, 'releaseYear', 1568);
+    $filteredBooks = filter( $books, 'releaseYear', 1968);
 
     ?>
 
