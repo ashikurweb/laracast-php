@@ -40,20 +40,18 @@
         ]
     ]; 
 
-
-    function filterByAuthor( $books, $author ) {
-        $filterByBooks = [];
+    $filterByAuthor = function ( $books, $author ) {
+        $filterBooks = [];
 
         foreach ( $books as $book ) {
             if ( $book['author'] === $author ) {
-                $filterByBooks[] = $book;
+                $filterBooks[] = $book;
             }
         }
+        return $filterBooks;
+    };
 
-        return $filterByBooks;
-    }
-
-    $filteredBooks = filterByAuthor( $books, 'Chetan Bhagat' );
+    $filteredBooks = $filterByAuthor( $books, 'Chetan Bhagat');
 
     ?>
 
