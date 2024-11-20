@@ -26,6 +26,13 @@
         ],
 
         [
+            'name'          => 'The Bread, Beauty and Revolution',
+            'author'        => 'Chetan Bhagat',
+            'releaseYear'   => 1968,
+            'purchaseUrl'   => 'https://chetan.com'
+        ],
+
+        [
             'name'          => 'An Equal Music',
             'author'        => 'Vikram Seth',
             'releaseYear'   => 2011,
@@ -35,20 +42,26 @@
 
 
     function filterByAuthor( $books ) {
-        return 'Ashikur Rahman';
+        $filterByBooks = [];
+
+        foreach ( $books as $book ) {
+            if ( $book['author'] === 'Chetan Bhagat' ) {
+                $filterByBooks[] = $book;
+            }
+        }
+
+        return $filterByBooks;
     }
 
     ?>
 
     <ul>
-       <?php foreach ( $books as $book ) : ?>
-        <?php if ( $book['author'] === 'Chetan Bhagat') : ?>
-            <a href="<?php echo $book['purchaseUrl'] ?>">
-                <li><?php echo $book['name']?> (<?php echo $book['releaseYear'] ?>)</li>
-            </a>
-        <?php endif; ?>
+       <?php foreach ( filterByAuthor( $books ) as $book ) : ?>
+        <a href="<?php echo $book['purchaseUrl'] ?>">
+            <li><?php echo $book['name'] ?> - <?php echo $book['author'] ?>(<?php echo $book['releaseYear'] ?>) </li>
+        </a>
       <?php endforeach; ?>
     </ul>
-    <p><?= filterByAuthor( $books ); ?></p>
+
 </body>
 </html>
