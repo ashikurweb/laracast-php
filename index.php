@@ -1,17 +1,16 @@
 <?php 
-require 'views/partials/head.php';
-
 require 'functions.php';
-
 require 'DB/Database.php';
 
 // require 'router.php';
 
-// Connect to our MySql database.
-
 $config = require('config.php');
 
 $db = new Database( $config['database'] );
-$posts = $db->query("SELECT * FROM posts")->fetchAll();
+
+$id = $_GET['id'];
+$query = "SELECT * FROM posts WHERE id = :id";
+
+$posts = $db->query( $query, [':id' => $id] )->fetchAll();
 
 dd( $posts );
