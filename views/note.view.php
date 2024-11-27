@@ -11,7 +11,7 @@
         <a href="/notes" class="text-sky-600 underline">
           go back...
         </a>
-        <p><?= $note['body'] ?></p>
+        <p><?= htmlspecialchars($note['body']) ?></p>
       </p>
     </div>
   </main>
