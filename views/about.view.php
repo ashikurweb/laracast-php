@@ -1,9 +1,9 @@
 <!-- Head -->
-<?php require('partials/head.php') ?>
+<?php require base_path('views/partials/head.php') ?>
 <!-- Nav -->
-<?php require('partials/nav.php') ?>
+<?php require base_path('views/partials/nav.php') ?>
 <!-- Banner -->
-<?php require('partials/banner.php') ?>
+<?php require base_path('views/partials/banner.php') ?>
 
 
   <main>
@@ -14,4 +14,4 @@
 
 
 <!-- Footer -->
-<?php require('partials/footer.php') ?>
+<?php require base_path('views/partials/footer.php') ?>
