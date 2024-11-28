@@ -11,13 +11,17 @@
     
   <form method="POST" class="bg-white p-8 rounded-2xl shadow-lg max-w-lg mx-auto">
       <div class="mb-6">
-        <label for="body" class="block text-gray-800 font-bold text-lg mb-3">Write Your Thoughts</label>
+        <label for="body" class="block text-gray-800 font-bold text-lg mb-3">Body</label>
         <textarea 
           name="body" 
           id="body" 
-          class="w-full h-40 p-4 border border-gray-200 rounded-xl shadow-sm focus:outline-none focus:ring-4 focus:ring-indigo-300 focus:border-indigo-400 resize-none placeholder-gray-400 text-gray-700"
+          class="w-full h-40 p-4 border <?= !empty($errors['body']) ? 'border-red-500' : 'border-slate-300' ?> rounded-xl shadow-sm focus:outline-none focus:ring-4 focus:ring-indigo-300 focus:border-indigo-400 resize-none placeholder-gray-400 text-gray-700"
           placeholder="Start typing here..."
-        ></textarea>
+        ><?= $_POST['body'] ?? '' ?></textarea>
+
+        <?php if (isset($errors['body'])) : ?>
+          <p class="text-red-500 text-xs mt-1"><?= $errors['body'] ?></p>
+        <?php endif; ?>
       </div>
       
       <div class="text-right">
